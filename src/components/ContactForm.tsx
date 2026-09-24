@@ -69,6 +69,31 @@ function toText(v: Values) {
 async function deliver(v: Values): Promise<Status> {
   const payload = { ...v, source: "Fernwood Cabin A sponsor site" };
   switch (contact.provider) {
+    case "web3forms": {
+      if (!contact.web3formsKey) return { kind: "warn", text: "The form has not been connected yet." };
+      const type = contact.partnershipTypes.find((t) => t.value === v.partnership)?.label ?? v.partnership;
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: contact.web3formsKey,
+          subject: `Fernwood Cabin A partnership inquiry: ${v.company}`,
+          from_name: "Fernwood Cabin A site",
+          // Web3Forms uses these for the email's reply-to and sender details.
+          name: v.name,
+          email: v.email,
+          Company: v.company,
+          Website: v.website || "—",
+          "Product / category": v.category,
+          "Partnership type": type,
+          "Estimated value": v.value || "—",
+          message: v.message,
+        }),
+      });
+      const data = (await res.json().catch(() => null)) as { success?: boolean } | null;
+      if (!res.ok || !data?.success) throw new Error(`HTTP ${res.status}`);
+      return { kind: "ok" };
+    }
     case "formspree":
     case "endpoint": {
       if (!contact.endpoint) return { kind: "warn", text: "The form endpoint has not been configured yet." };

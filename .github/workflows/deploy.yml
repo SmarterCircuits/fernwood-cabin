@@ -20,9 +20,9 @@ jobs:
     env:
       # Production URL: canonical links, Open Graph, structured data.
       NEXT_PUBLIC_SITE_URL: https://cabin.smartercircuits.com
-      # Contact form: set these as repository variables (Settings → Secrets and
-      # variables → Actions → Variables) once a provider is chosen. GitHub Pages
-      # has no server, so use "formspree" or "mailto".
+      # Contact form: Web3Forms is the default (src/data/contact.ts). Set these
+      # repository variables only to switch provider (Settings → Secrets and
+      # variables → Actions → Variables).
       NEXT_PUBLIC_CONTACT_PROVIDER: ${{ vars.CONTACT_PROVIDER }}
       NEXT_PUBLIC_CONTACT_ENDPOINT: ${{ vars.CONTACT_ENDPOINT }}
     steps:

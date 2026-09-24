@@ -53,7 +53,7 @@ Requires Node 20.9+. TypeScript is pinned to 5.x on purpose: Next's build-time t
 1. **Channel metrics** (all six): subscribers, monthly views, average views, annual growth, audience geography, sponsor/project video performance. `src/data/channel.ts`. Until they're filled, production shows "Available on request". The historical figure (≈ 5,250 subscribers, June 2026) is kept only as a code comment and is not published.
 2. **YouTube channel URL:** `src/data/channel.ts`.
 3. **Sponsorship contact email:** `src/data/contact.ts` → `email`. Not invented.
-4. **Contact form provider:** `src/data/contact.ts` → `provider` / `endpoint`, or env vars.
+4. ~~Contact form provider~~: done (Web3Forms).
 5. **Production domain:** `NEXT_PUBLIC_SITE_URL`. Enables canonical URL, `og:url`, and absolute social image URLs. No domain is assumed.
 6. **Photos:** 9 slots in `src/data/media.ts` (property, cabin site, forest, drawings, tools & materials, construction progress, three YouTube thumbnails).
 7. **Social preview image:** `public/og-image.png` (replace with a real project photo at 1200×630).
@@ -68,7 +68,11 @@ Also **verify before publishing** (these are not auto-detected):
 
 ## Contact form
 
-The form has full client-side validation: required fields, email and URL format, an error summary that takes focus and links to each field, `aria-invalid`/`aria-describedby` on fields, and a honeypot field. **No backend is included.** Choose a provider:
+The form has full client-side validation: required fields, email and URL format, an error summary that takes focus and links to each field, `aria-invalid`/`aria-describedby` on fields, and a honeypot field.
+
+**Active provider: [Web3Forms](https://web3forms.com)** (free plan). Submissions are emailed to the address the access key was created for; change that address in the Web3Forms dashboard, not in this repo. The key lives in `src/data/contact.ts` (`web3formsKey`, or override with `NEXT_PUBLIC_WEB3FORMS_KEY`). It is designed to be public: it can only deliver to your inbox. Web3Forms only accepts submissions from real browsers; server-side or scripted requests are rejected on the free plan.
+
+Other supported providers:
 
 | Provider | Setup |
 |---|---|
@@ -92,7 +96,7 @@ The site is a static export (`output: "export"` in `next.config.ts`).
   1. Repo **Settings → Pages → Source: GitHub Actions**.
   2. **Settings → Pages → Custom domain:** `cabin.smartercircuits.com`, then tick **Enforce HTTPS** once the certificate is issued. (Workflow-based deploys ignore `CNAME` files, so the domain is set here.)
   3. DNS at your domain host: a `CNAME` record for `cabin` pointing to `<your-github-username>.github.io`.
-  4. Contact form: Pages has no server, so use Formspree or mailto. Set repository **variables** `CONTACT_PROVIDER` (e.g. `formspree`) and `CONTACT_ENDPOINT` under Settings → Secrets and variables → Actions → Variables.
+  4. Contact form: already connected through Web3Forms (see [Contact form](#contact-form)). To switch providers, set repository **variables** `CONTACT_PROVIDER` and `CONTACT_ENDPOINT` under Settings → Secrets and variables → Actions → Variables.
   5. On GitHub's free plan, Pages needs a public repository.
 - **Vercel:** import the repo; framework preset Next.js. Set env vars in project settings.
 - **Netlify:** build command `npm run build`, publish directory `out`.

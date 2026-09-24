@@ -24,6 +24,7 @@ export function findPlaceholders(): Placeholder[] {
   if (contact.provider === "none") out.push({ what: "Contact form delivery (no provider configured)", where: "src/data/contact.ts or NEXT_PUBLIC_CONTACT_PROVIDER" });
   if ((contact.provider === "formspree" || contact.provider === "endpoint") && !contact.endpoint)
     out.push({ what: `Contact endpoint for provider "${contact.provider}"`, where: "NEXT_PUBLIC_CONTACT_ENDPOINT" });
+  if (contact.provider === "web3forms" && !contact.web3formsKey) out.push({ what: "Web3Forms access key", where: "src/data/contact.ts → web3formsKey" });
   if (contact.provider === "mailto" && !contact.email) out.push({ what: "mailto provider needs contact.email", where: "src/data/contact.ts" });
   const emptyMedia = Object.values(media).filter((m) => !m.src);
   if (emptyMedia.length) out.push({ what: `${emptyMedia.length} photo slot(s) without images: ${emptyMedia.map((m) => m.id).join(", ")}`, where: "src/data/media.ts + public/media/" });
