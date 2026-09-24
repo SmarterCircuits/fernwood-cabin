@@ -27,3 +27,12 @@ export function feetInches(totalIn: number) {
   if (!inches && !frac) return `${ft}′`;
   return `${ft}′ ${inches || ""}${frac}″`;
 }
+
+const compact = new Intl.NumberFormat("en-US", { notation: "compact", maximumFractionDigits: 2 });
+/** 5890 → "5.89K" */
+export const compactNum = (n: number) => compact.format(n);
+
+/** "2026-09-24" → "Sep 24, 2026" */
+export function longDate(iso: string) {
+  return new Date(iso + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+}

@@ -1,4 +1,6 @@
 import { cabin, property, roof } from "@/data/project";
+import { getChannelStats } from "@/lib/channelStats";
+import { compactNum, longDate, monthYear, qty } from "@/lib/format";
 import { CabinElevation } from "./CabinElevation";
 
 const themes = [
@@ -67,6 +69,49 @@ export function Hero() {
           </dl>
         </div>
       </div>
+      <ChannelStatsStrip />
     </section>
+  );
+}
+
+/** Smarter Circuits stats, refreshed daily by the deploy workflow (see README). */
+function ChannelStatsStrip() {
+  const stats = getChannelStats();
+  if (!stats) return null;
+  const { latest, growth } = stats;
+
+  const items: { k: string; v: string; note?: string }[] = [
+    { k: "YouTube channel", v: stats.channel },
+    ...(latest.subscribers !== undefined ? [{ k: "Subscribers", v: compactNum(latest.subscribers) }] : []),
+    ...(latest.views !== undefined ? [{ k: "Total views", v: qty(latest.views) }] : []),
+    ...(latest.videos !== undefined ? [{ k: "Videos", v: qty(latest.videos) }] : []),
+    ...(growth
+      ? [
+          {
+            k: "Subscriber growth",
+            v: `${growth.percent >= 0 ? "+" : ""}${growth.percent.toFixed(1)}%`,
+            note: growth.label || `since ${monthYear(growth.since)}${growth.approximate ? " (approx.)" : ""}`,
+          },
+        ]
+      : []),
+    { k: "Updated", v: longDate(latest.date) },
+  ];
+
+  return (
+    <div className="facts-strip facts-strip--channel">
+      <div className="container">
+        <dl aria-label={`${stats.channel} YouTube channel statistics`}>
+          {items.map((f) => (
+            <div key={f.k}>
+              <dt>{f.k}</dt>
+              <dd>
+                {f.v}
+                {f.note && <small>{f.note}</small>}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
   );
 }

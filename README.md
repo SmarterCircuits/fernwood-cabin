@@ -27,6 +27,7 @@ Requires Node 20.9+. TypeScript is pinned to 5.x on purpose: Next's build-time t
 
 | What | File | Notes |
 |---|---|---|
+| **Live channel stats (hero row)** | automatic: `src/data/channel-stats.json` | Refreshed daily by the deploy workflow from the YouTube Data API once the `YOUTUBE_API_KEY` secret is set (see below). You can also add past snapshots by hand, e.g. from YouTube Studio, to improve the growth figure. |
 | **Channel statistics** | `src/data/channel.ts` → `channelMetrics` | Set `value` (display string) **and** `asOf` (`"YYYY-MM"`), and ideally `note` (source). `null` values never render as numbers. |
 | YouTube channel URL | `src/data/channel.ts` → `channel.youtubeUrl` | Adds "Visit on YouTube" links when set. |
 | **Sponsor statuses** | `src/data/sponsors.ts` → `sponsorCategories[].status` | One of `seeking`, `in-discussion`, `sponsored`, `owner-supplied`, `purchased`, `completed`. Updates the category grid, materials table, phase cards and sponsor-covered total. |
@@ -119,6 +120,15 @@ src/
 public/           og-image.png, __forms.html (Netlify), media/ (your photos)
 docs/examples/    Resend relay example, OG image generator
 ```
+
+### Live YouTube stats
+
+The row beneath the hero facts shows Smarter Circuits subscribers, total views, video count and subscriber growth, read from `src/data/channel-stats.json` at build time.
+
+- **Updating:** the deploy workflow runs daily at 11:00 UTC (and on every push). When the repository secret `YOUTUBE_API_KEY` exists, `scripts/update-channel-stats.mjs` records a snapshot for the day, commits it, and the site redeploys with the new numbers. Without the secret the last recorded numbers stay up.
+- **Getting a key (free):** Google Cloud Console → create a project → enable **YouTube Data API v3** → Credentials → Create API key (restrict it to the YouTube Data API). Then: `gh secret set YOUTUBE_API_KEY` (paste the key when prompted). The daily run uses 1 of the 10,000 free quota units.
+- **Growth:** measured over the past 12 months once a year of snapshots exists; until then, from the earliest snapshot, and the row shows which ("since Jun 2026"). The first baseline is the approximate June 2026 figure (≈ 5,250), marked "approx." on the site; replace or remove it in the JSON if you have an exact number.
+- YouTube rounds public subscriber counts to three significant figures (e.g. 5.89K), so small day-to-day changes may not show.
 
 ### Content rules built into the site
 

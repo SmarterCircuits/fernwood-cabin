@@ -1,12 +1,20 @@
 import { channel, channelMetrics, secondChannel } from "@/data/channel";
-import { monthYear } from "@/lib/format";
+import { getChannelStats } from "@/lib/channelStats";
+import { compactNum, monthYear } from "@/lib/format";
 import { ImageSlot } from "../ImageSlot";
 import { SectionHeader } from "../SectionHeader";
 
 const isDev = process.env.NODE_ENV !== "production";
 
 export function Channel() {
-  const placeholders = channelMetrics.filter((m) => m.value === null);
+  // Subscribers come from the auto-updated stats (src/data/channel-stats.json).
+  const live = getChannelStats()?.latest;
+  const metrics = channelMetrics.map((m) =>
+    m.id === "subscribers" && m.value === null && live?.subscribers !== undefined
+      ? { ...m, value: compactNum(live.subscribers), asOf: live.date.slice(0, 7), note: "Updated automatically from YouTube" }
+      : m,
+  );
+  const placeholders = metrics.filter((m) => m.value === null);
 
   return (
     <section className="section section--dark" id="channel" aria-labelledby="channel-title">
@@ -54,7 +62,7 @@ export function Channel() {
               </div>
             )}
             <dl className="metric-grid">
-              {channelMetrics.map((m) => {
+              {metrics.map((m) => {
                 const pending = m.value === null;
                 return (
                   <div key={m.id} className={`metric ${pending ? "metric--placeholder" : ""} ${pending && isDev ? "metric--dev" : ""}`}>
