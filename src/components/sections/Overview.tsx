@@ -22,8 +22,9 @@ export function Overview() {
       <div className="container">
         <SectionHeader index="01" eyebrow="Overview" title="A small smart cabin, built and shown in full over a series of videos" id="overview-title">
           <p>
-            Fernwood Cabin A is a compact, insulated, off-grid cabin at Fernwood--a 10.3-acre woodland property in Oscoda County, Michigan. It extends the Smarter
-            Circuits channel&apos;s hands-on demonstration capability. The build is
+            Fernwood Cabin A is a compact, insulated, off-grid cabin at Fernwood--a 10.3-acre woodland property in Oscoda County, Michigan. It will be shown on two
+            YouTube channels, Smarter Circuits and Life at Fernwood, extending the Smarter Circuits channel&apos;s hands-on demonstration
+            capability. The build is
             planned in phases and every step is documented. 
           </p>
         </SectionHeader>

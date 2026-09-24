@@ -14,7 +14,7 @@ export const property = {
   name: "Fernwood",
   county: "Oscoda County",
   state: "Michigan",
-  locationLine: "Oscoda County, Michigan — between Lewiston and Mio",
+  locationLine: "Oscoda County, Michigan",
   acres: 10.3,
   ownership: "Privately owned",
   cover: "Forested northern Michigan woodland, previously select-cut",
@@ -26,6 +26,12 @@ export const property = {
     "Black cherry",
     "Bigtooth aspen",
     "Native understory species",
+  ],
+  /** Wildlife seen on the property, grouped by how often. */
+  wildlife: [
+    { frequency: "Regular", animals: ["Wild turkey", "Deer", "Coyote", "Fox"] },
+    { frequency: "Occasional", animals: ["Black bear", "Elk"] },
+    { frequency: "Ultra rare", animals: ["Cougar", "Bobcat"] },
   ],
   access: "Private two-track spur off a public road",
   approach:

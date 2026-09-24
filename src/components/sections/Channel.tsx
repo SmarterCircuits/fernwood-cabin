@@ -1,4 +1,4 @@
-import { channel, channelMetrics } from "@/data/channel";
+import { channel, channelMetrics, secondChannel } from "@/data/channel";
 import { monthYear } from "@/lib/format";
 import { ImageSlot } from "../ImageSlot";
 import { SectionHeader } from "../SectionHeader";
@@ -29,6 +29,20 @@ export function Channel() {
                 Visit {channel.name} on YouTube
               </a>
             )}
+
+            <div className="card" style={{ marginTop: 28 }}>
+              <p className="kicker" style={{ marginBottom: 6 }}>Also on YouTube</p>
+              <h3>{secondChannel.name}</h3>
+              <p className="muted" style={{ fontSize: "0.93rem" }}>{secondChannel.focus}</p>
+              <p className="muted" style={{ fontSize: "0.88rem" }}>
+                Sponsor coverage runs on {channel.name} by default; arrangements that include {secondChannel.name} can be discussed.
+              </p>
+              {secondChannel.youtubeUrl && (
+                <a className="btn btn--ghost btn--small" href={secondChannel.youtubeUrl} target="_blank" rel="noopener noreferrer">
+                  Visit {secondChannel.name} on YouTube
+                </a>
+              )}
+            </div>
           </div>
 
           <div>

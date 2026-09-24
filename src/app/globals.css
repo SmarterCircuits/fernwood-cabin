@@ -327,6 +327,10 @@ small { font-size: 0.85em; }
 .spec-list dt { color: var(--ink-3); font-size: 0.9rem; }
 .spec-list dd { margin: 0; font-weight: 500; }
 .species { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0; }
+.wildlife { margin: 0; display: grid; gap: 10px; }
+.wildlife > div { display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: start; }
+.wildlife dt { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3); padding-top: 5px; }
+.wildlife dd { margin: 0; }
 .species li { margin: 0; font-size: 0.85rem; padding: 3px 10px; border-radius: 999px; background: var(--forest-tint); color: var(--forest); }
 .media-grid { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
 .media-grid > :first-child { grid-column: 1 / -1; }

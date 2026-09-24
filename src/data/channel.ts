@@ -33,6 +33,17 @@ export const channel = {
   ],
 };
 
+/**
+ * The project's second YouTube channel. Sponsor coverage runs on Smarter
+ * Circuits by default; arrangements for this channel are possible.
+ */
+export const secondChannel = {
+  name: "Life at Fernwood",
+  /** PLACEHOLDER — the channel URL, e.g. "https://www.youtube.com/@..." */
+  youtubeUrl: null as string | null,
+  focus: "Follows the Fernwood property and the wider project: the land, the seasons, and life around the build.",
+};
+
 export const channelMetrics: ChannelMetric[] = [
   { id: "subscribers", label: "YouTube subscribers", value: null, asOf: null },
   { id: "monthly-views", label: "Recent monthly views", value: null, asOf: null },

@@ -1,4 +1,4 @@
-import { channel, channelMetrics } from "@/data/channel";
+import { channel, channelMetrics, secondChannel } from "@/data/channel";
 import { contact } from "@/data/contact";
 import { media } from "@/data/media";
 import { site } from "@/data/site";
@@ -16,6 +16,7 @@ export function findPlaceholders(): Placeholder[] {
   const out: Placeholder[] = [];
   if (!site.siteUrl) out.push({ what: "Production site URL (canonical / Open Graph)", where: "NEXT_PUBLIC_SITE_URL or src/data/site.ts" });
   if (!channel.youtubeUrl) out.push({ what: "YouTube channel URL", where: "src/data/channel.ts → channel.youtubeUrl" });
+  if (!secondChannel.youtubeUrl) out.push({ what: `${secondChannel.name} YouTube URL`, where: "src/data/channel.ts → secondChannel.youtubeUrl" });
   for (const m of channelMetrics) {
     if (m.value === null) out.push({ what: `Channel metric: ${m.label}`, where: "src/data/channel.ts → channelMetrics" });
     else if (!m.asOf) out.push({ what: `Channel metric "${m.label}" has no as-of date`, where: "src/data/channel.ts → channelMetrics" });

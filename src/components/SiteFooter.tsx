@@ -15,7 +15,7 @@ export function SiteFooter() {
               <span>{site.projectName}</span>
             </p>
             <p>
-              A 12×16 off-grid cabin in Oscoda County, Michigan, part of {site.umbrella} and documented on {channel.name}.
+              A 12×16 off-grid cabin in Oscoda County, Michigan, shown on the {channel.name} and {site.umbrella} YouTube channels.
             </p>
             <p style={{ fontSize: "0.82rem" }}>
               {PRICE_DISCLAIMER} Drawings are conceptual and not for construction. Structural, electrical and plumbing designs are subject to

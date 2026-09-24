@@ -8,12 +8,15 @@ export const faq: FaqItem[] = [
   {
     q: "What is Fernwood?",
     a: [
-      "Fernwood is a privately owned 10.3-acre wooded property in northern Michigan, and the name of the long-term project to develop it into a practical, low-impact, largely off-grid place. The first build, Fernwood Cabin A, is a small insulated off-grid cabin. The wider project is documented as Life at Fernwood, with sponsor-related coverage on the Smarter Circuits YouTube channel.",
+      "Fernwood is a privately owned 10.3-acre wooded property in northern Michigan, and the name of the long-term project to develop it into a practical, low-impact, largely off-grid place. The first build, Fernwood Cabin A, is a small insulated off-grid cabin. The project is shown on two YouTube channels: Life at Fernwood, which follows the property and the wider project, and Smarter Circuits, which carries sponsor-related coverage by default.",
     ],
   },
   {
     q: "Where is the project?",
-    a: ["Oscoda County, Michigan, between Lewiston and Mio. The land is reached by a private two-track off a public road."],
+    a: [
+      "Oscoda County, Michigan, between Lewiston and Mio. The land is reached by a private two-track off a public road.",
+      "It is genuinely wild country. Wild turkey, deer, coyote and fox are regular visitors, black bear and elk turn up occasionally, and a cougar or bobcat is an ultra-rare sighting.",
+    ],
   },
   {
     q: "How large is the cabin?",

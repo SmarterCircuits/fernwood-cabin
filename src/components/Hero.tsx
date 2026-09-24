@@ -2,10 +2,10 @@ import { cabin, property, roof } from "@/data/project";
 import { CabinElevation } from "./CabinElevation";
 
 const themes = [
-  "Practical DIY construction",
-  "Energy-efficient design",
-  "Off-grid power",
-  "Smart-home technology",
+  "Compelling content",
+  "Fast growing audience",
+  "Multi-channel exposure",
+  "Trusted reviews",
   "Real-world product testing",
   "Long-term documentation",
 ];
@@ -31,8 +31,9 @@ export function Hero() {
               A {cabin.width}×{cabin.length} off-grid cabin on 10 acres of northern Michigan woodland.
             </p>
             <p className="hero-copy">
-              A real, privately owned build documented from the first footing to years of daily use. Every product that goes into this cabin is
-              chosen because the build needs it, installed on camera, and revisited after it has lived through northern Michigan winters.
+              A real, privately owned build shown on two YouTube channels, <strong>Smarter Circuits</strong> and <strong>Life at Fernwood</strong>,
+              from the first footing to years of daily use. Every product that goes into this cabin is chosen because the build needs it, installed
+              on camera, and revisited after it has lived through northern Michigan winters.
             </p>
             <ul className="hero-themes" aria-label="What the project combines">
               {themes.map((t) => (
@@ -50,7 +51,7 @@ export function Hero() {
           </div>
           <figure className="hero-figure" style={{ margin: 0 }}>
             <CabinElevation minimal titleId="hero-drawing-title" />
-            <figcaption>Conceptual elevation · not for construction</figcaption>
+            <figcaption>Conceptual elevation</figcaption>
           </figure>
         </div>
       </div>

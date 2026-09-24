@@ -46,10 +46,28 @@ export function Project() {
               ))}
             </ul>
 
+            <h3 style={{ marginTop: 32 }}>Who lives here</h3>
+            <dl className="wildlife">
+              {property.wildlife.map((w) => (
+                <div key={w.frequency}>
+                  <dt>{w.frequency}</dt>
+                  <dd>
+                    <ul className="species" aria-label={`${w.frequency} wildlife`}>
+                      {w.animals.map((a) => (
+                        <li key={a}>{a}</li>
+                      ))}
+                    </ul>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
             <div className="callout callout--forest" style={{ marginTop: 32 }}>
               <p>
-                <strong>Fernwood</strong> is the property. <strong>Fernwood Cabin A</strong> is the first build on it. <strong>Life at Fernwood</strong> is the wider content concept around
-                it. Sponsor-related coverage runs on <strong>Smarter Circuits</strong>, an established smart-home, electronics and DIY channel by default, but additional arrangements for Life at Fernwood are possible.
+                <strong>Fernwood</strong> is the property. <strong>Fernwood Cabin A</strong> is the first build on it. The project is shown on two YouTube
+                channels: <strong>Life at Fernwood</strong>, which follows the property and the wider project, and <strong>Smarter Circuits</strong>,
+                an established smart-home, electronics and DIY channel. Sponsor-related coverage runs on Smarter Circuits by default, but additional
+                arrangements for Life at Fernwood are possible.
               </p>
             </div>
           </div>
