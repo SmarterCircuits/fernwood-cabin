@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--
+  Netlify Forms registration only. Netlify detects this static form at deploy
+  time so the React contact form can POST to it (provider: "netlify").
+  Field names must match src/components/ContactForm.tsx.
+-->
+<html lang="en">
+  <body>
+    <form name="sponsor-inquiry" data-netlify="true" netlify-honeypot="company_confirm" hidden>
+      <input type="text" name="company_confirm" />
+      <input type="text" name="name" />
+      <input type="text" name="company" />
+      <input type="email" name="email" />
+      <input type="text" name="website" />
+      <input type="text" name="category" />
+      <input type="text" name="partnership" />
+      <input type="text" name="value" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

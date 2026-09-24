@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Placeholder favicon: shed-roof outline with a fern frond. Replace with final brand mark. -->
+  <rect width="32" height="32" rx="6" fill="#1a1e1c"/>
+  <path d="M5 14 L27 8 V27 H5 Z" fill="none" stroke="#ece8df" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M16 25 V13" stroke="#8fb79a" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M16 22 l-4-2 M16 22 l4-2 M16 18.5 l-3.2-1.8 M16 18.5 l3.2-1.8 M16 15 l-2.4-1.4 M16 15 l2.4-1.4" stroke="#8fb79a" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

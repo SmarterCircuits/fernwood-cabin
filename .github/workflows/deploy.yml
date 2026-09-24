@@ -1,0 +1,50 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # Production URL: canonical links, Open Graph, structured data.
+      NEXT_PUBLIC_SITE_URL: https://cabin.smartercircuits.com
+      # Contact form: set these as repository variables (Settings → Secrets and
+      # variables → Actions → Variables) once a provider is chosen. GitHub Pages
+      # has no server, so use "formspree" or "mailto".
+      NEXT_PUBLIC_CONTACT_PROVIDER: ${{ vars.CONTACT_PROVIDER }}
+      NEXT_PUBLIC_CONTACT_ENDPOINT: ${{ vars.CONTACT_ENDPOINT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Switch to `npm run build:strict` to block deploys while placeholders remain.
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
