@@ -36,7 +36,7 @@ export const property = {
   access: "Private two-track spur off a public road",
   approach:
     "The site is being developed gradually and deliberately, rather than cleared extensively, with the goal of keeping the woodland characteristics that make it worth building and filming on. For Smarter Circuits, the site provides an authentic backdrop for demonstrating smart, automated off-grid living. For Life in Fernwood, it is the setting for documenting everyday life in a northern Michigan woodland homestead.",
-  objective: "A practical, low-impact, off-grid property that will remain in use indefinitely.",
+  objective: "Video content surrounding a practical, low-impact, off-grid property that will remain in use indefinitely.",
 };
 
 /** All dimensions in feet unless noted. */

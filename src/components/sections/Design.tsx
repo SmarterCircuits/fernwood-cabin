@@ -42,7 +42,7 @@ export function Design() {
         <div className="diagram">
           <div className="diagram-title">
             <h3>Side elevation</h3>
-            <span className="stamp">Conceptual · not for construction</span>
+            <span className="stamp">Conceptual</span>
           </div>
           <p className="scroll-hint" aria-hidden="true">Swipe sideways to see the full drawing →</p>
           <div className="diagram-scroll" tabIndex={0} role="region" aria-label="Side elevation drawing (scrollable)">
@@ -50,7 +50,7 @@ export function Design() {
           </div>
           <p className="diagram-note">
             Dimensions are approximate. The floor framing sits {cabin.postHeight} ft above grade on eight PT 4x6 posts; post locations are
-            schematic, with layout, footings and connections set in final design. The service platform between the posts sits at{" "}
+            dependent, with layout, footings, and connections upon code compliance. The service platform between the posts sits at{" "}
             {cabin.servicePlatform.heightLabel} so the black tank can roll straight out, and the diesel heater and electrical equipment stay
             reachable without entering the cabin.
           </p>
