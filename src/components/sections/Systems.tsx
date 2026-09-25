@@ -70,7 +70,7 @@ export function Systems() {
           </p>
         </div>
 
-        <div className="grid grid-3" style={{ marginTop: 20 }}>
+        <div className="grid grid-2" style={{ marginTop: 20 }}>
           <div className="card card--flat">
             <h3>Electrical scope</h3>
             <ul style={{ fontSize: "0.93rem" }}>
@@ -96,13 +96,6 @@ export function Systems() {
             </ul>
             <p style={{ marginTop: 12, marginBottom: 0 }}><SponsorChip status="owner-supplied" /></p>
           </div>
-          <div className="card card--flat">
-            <h3>Efficiency is a system</h3>
-            <p className="muted" style={{ fontSize: "0.9rem" }}>Each step makes the next one smaller.</p>
-            <ol className="chain">
-              {power.efficiencyChain.map((c) => <li key={c}>{c}</li>)}
-            </ol>
-          </div>
         </div>
 
         <div className="split split--even" style={{ marginTop: 20 }}>
@@ -123,10 +116,11 @@ export function Systems() {
               <strong>Fixtures:</strong> {plumbing.fixtures.join(" · ")}
             </p>
             <ul style={{ fontSize: "0.9rem", columns: "2 180px" }}>{plumbing.rough.map((r) => <li key={r}>{r}</li>)}</ul>
+            <p style={{ fontSize: "0.93rem" }}>{plumbing.waterSupply}</p>
             <p style={{ fontSize: "0.93rem" }}>{plumbing.waterHeater}</p>
             <p style={{ fontSize: "0.93rem" }}>{plumbing.blackTank}</p>
             <p className="muted" style={{ fontSize: "0.88rem", marginBottom: 0 }}>
-              <strong>Separate future phases, outside the cabin budget:</strong> {plumbing.excluded.join(", ").toLowerCase()}.
+              <strong>Separate future phases, outside the cabin budget:</strong> {plumbing.excluded.join(", ").toLowerCase()}. {plumbing.well}
             </p>
           </div>
         </div>

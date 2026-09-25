@@ -118,9 +118,9 @@ export const phases: BuildPhase[] = [
     id: "plumbing",
     title: "Plumbing",
     status: "planned",
-    summary: "PEX supply and DWV for a kitchenette and small bathroom. Well and septic are separate phases.",
-    materials: ["PEX + fittings", "3-in / 2-in / 1½-in DWV", "Water heater", "Exhaust fan"],
-    sponsorCategories: ["pex", "plumbing-fixtures", "water-heating", "ventilation"],
+    summary: "PEX supply and DWV for a kitchenette and small bathroom, fed by two 65-gallon water tanks and a pump on the service platform. Well and septic are separate phases.",
+    materials: ["2 × 65-gal water tanks", "Water pump", "PEX + fittings", "3-in / 2-in / 1½-in DWV", "Water heater", "Exhaust fan"],
+    sponsorCategories: ["pumps", "pex", "plumbing-fixtures", "water-heating", "ventilation"],
   },
   {
     id: "interior",

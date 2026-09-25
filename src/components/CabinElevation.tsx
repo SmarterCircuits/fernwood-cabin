@@ -76,8 +76,8 @@ export function CabinElevation({ minimal = false, titleId }: { minimal?: boolean
       <desc id="elev-desc">
         A 16-foot-long cabin with an 8-foot low wall and 12-foot high wall. The metal shed roof rises 4 feet over the length for a 3:12 pitch, with
         1-foot overhangs at each end, a horizontal run of 18 feet, and a future solar array on the roof. The floor framing sits 4 feet above
-        grade on eight pressure-treated 4x6 posts. Between the posts, a service platform at truck-tailgate height holds a roll-out black tank
-        and gives access to the diesel heater and electrical equipment. Post positions are schematic.
+        grade on eight pressure-treated 4x6 posts. Between the posts, a service platform at truck-tailgate height holds a roll-out black tank,
+        two 65-gallon water tanks and a water pump, and gives access to the diesel heater and electrical equipment. Post positions are schematic.
       </desc>
       <defs>
         <marker id="tick" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="10" markerHeight="10" orient="auto">
@@ -105,13 +105,18 @@ export function CabinElevation({ minimal = false, titleId }: { minimal?: boolean
       {(() => {
         // Place each item in a gap between the schematic posts.
         const gap = (a: number, b: number) => ({ x: postXs[a] + 12, w: postXs[b] - postXs[a] - 24 });
+        const g1 = gap(1, 2);
+        const g2 = gap(2, 3);
         const items = [
           { ...gap(0, 1), h: 26, rx: 8, label: "black tank" },
-          { ...gap(1, 2), h: 22, rx: 3, label: "diesel heater" },
-          { ...gap(2, 3), h: 22, rx: 3, label: "electrical" },
+          { x: g1.x, w: 48, h: 30, rx: 6, label: "65 gal" },
+          { x: g1.x + 52, w: 48, h: 30, rx: 6, label: "65 gal" },
+          { x: g1.x + 104, w: g1.w - 104, h: 16, rx: 3, label: "pump" },
+          { x: g2.x, w: 52, h: 22, rx: 3, label: "heater" },
+          { x: g2.x + 56, w: g2.w - 56, h: 22, rx: 3, label: "electrical" },
         ];
-        return items.map((it) => (
-          <g key={it.label}>
+        return items.map((it, i) => (
+          <g key={i}>
             <rect className="dwg-equip" x={it.x} y={platY - it.h} width={it.w} height={it.h} rx={it.rx} />
             <text className="dwg-label dwg-label--ink" x={it.x + it.w / 2} y={platY - it.h / 2 + 4} textAnchor="middle" style={{ fontSize: 11 }}>
               {it.label}
@@ -121,6 +126,7 @@ export function CabinElevation({ minimal = false, titleId }: { minimal?: boolean
       })()}
       <path className="dwg-thin" d={`M${postXs[0] + 40} ${platY + 18} H${postXs[0] + 14}`} markerEnd="url(#arrowL)" />
       <text className="dwg-label dwg-label--wood" x={postXs[0] + 46} y={platY + 22} style={{ fontSize: 11 }}>tank rolls out</text>
+      <text className="dwg-label dwg-label--wood" x={(postXs[1] + postXs[2]) / 2} y={platY + 22} textAnchor="middle" style={{ fontSize: 11 }}>water tanks + pump</text>
       <text className="dwg-label dwg-label--wood" x={x1 + 14} y={platY - 4} style={{ fontSize: 12 }}>Service platform</text>
       <text className="dwg-label dwg-label--wood" x={x1 + 14} y={platY + 12} style={{ fontSize: 12 }}>at {sp.heightLabel}</text>
 

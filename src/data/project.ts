@@ -58,7 +58,7 @@ export const cabin = {
     name: "Under-floor service platform",
     heightLabel: "truck-tailgate height",
     drawnHeight: 2.75,
-    uses: ["Roll-out black tank", "Diesel heater access", "Electrical equipment access"],
+    uses: ["Roll-out black tank", "Two 65-gal water tanks and pump", "Diesel heater access", "Electrical equipment access"],
   },
   construction: [
     "Floor raised 4 ft on treated posts (grade to 2x12 floor framing)",
@@ -193,7 +193,7 @@ export const framingNote =
 
 export const power = {
   summary:
-    "Primarily off-grid. No conventional 100 A utility service. Two independent 3,000 W inverter systems, each feeding its own small load center.",
+    "Fully off-grid, with no outside utility connections. Two independent 3,000 W inverter systems, each feeding its own small load center.",
   inverterWatts: 3000,
   volts: 120,
   systems: [
@@ -227,7 +227,7 @@ export const power = {
 
 export const heating = {
   current:
-    "Heating is still being evaluated. A compact diesel heater has been considered, with an initial allowance of about $200 plus fuel tank and components. The under-floor service platform gives it a serviceable location outside the living space.",
+    "There will be a compact diesel heater to serve as a backup and stand-by heat source. The under-floor service platform gives it a serviceable location outside the living space. An initial allowance of about $200 plus fuel tank and components has been considered for the diesel heater.",
   woodStove:
     "A new wood stove is already owned and could be installed as a later stretch phase. A safe, compliant installation would still need a chimney system, roof penetration and flashing, hearth, heat shielding, noncombustible materials and correct clearances.",
   woodStoveCommitted: false,
@@ -245,13 +245,14 @@ export const plumbing = {
     "Toilet flange and fixture connections",
     "Bathroom exhaust fan",
   ],
+  waterSupply:
+    "Water comes from two 65-gallon tanks (≈ 130 gallons) on the under-floor service platform. A water pump pressurizes the cabin supply lines.",
+  well: "A well is possible, but it is estimated to need 60–80 ft of depth, which would add significant cost. It remains a separate future phase.",
   waterHeater: "A small water heater is needed; fuel and type have not been selected.",
   blackTank: "Waste drains to a black tank on the under-floor service platform, which rolls out at tailgate height for emptying.",
   excluded: [
-    "Well",
-    "Cistern / water storage (if used)",
+    "Well (estimated 60–80 ft deep)",
     "Septic system",
     "Major trenching",
-    "Site utility infrastructure",
   ],
 };

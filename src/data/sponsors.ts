@@ -66,7 +66,7 @@ export const sponsorCategories: SponsorCategory[] = [
   { id: "plumbing-fixtures", name: "Plumbing fixtures", group: "plumbing-water", status: "seeking", fit: "Kitchen sink, bathroom vanity, toilet, shower stall and faucets.", phases: ["plumbing", "interior"] },
   { id: "pex", name: "PEX / plumbing systems", group: "plumbing-water", status: "seeking", fit: "¾-in and ½-in PEX supply, fittings, shutoffs and DWV.", phases: ["plumbing"] },
   { id: "water-heating", name: "Water heating", group: "plumbing-water", status: "seeking", fit: "A small cabin water heater; fuel and type still open.", phases: ["plumbing"] },
-  { id: "pumps", name: "Pumps / water systems", group: "plumbing-water", status: "seeking", fit: "Pressure and water-delivery equipment for a future water phase.", phases: ["plumbing", "commissioning"] },
+  { id: "pumps", name: "Pumps / water systems", group: "plumbing-water", status: "seeking", fit: "Two 65-gallon water tanks and a pump on the service platform. A well, if drilled later, would be a separate phase.", phases: ["plumbing", "commissioning"] },
 
   // Electrical & energy
   { id: "electrical-panels", name: "Electrical panels", group: "electrical-energy", status: "seeking", fit: "Two small load centers, breakers and disconnects for independent inverter systems.", phases: ["electrical"] },

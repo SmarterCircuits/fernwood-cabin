@@ -42,7 +42,7 @@ export function Sponsors() {
             </div>
           ))}
           <div className="card card--tint adv-card">
-            <h3>A product&apos;s life in the build</h3>
+            <h3>A product&apos;s life in the build (key video milestones)</h3>
             <ol className="lifecycle" aria-label="Stages a product is shown in">
               {productLifecycle.map((s) => <li key={s}>{s}</li>)}
             </ol>

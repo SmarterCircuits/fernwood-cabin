@@ -8,7 +8,7 @@ export const faq: FaqItem[] = [
   {
     q: "What is Fernwood?",
     a: [
-      "Fernwood is a privately owned 10.3-acre wooded property in northern Michigan, and the name of the long-term project to develop it into a practical, low-impact, largely off-grid place. The first build, Fernwood Cabin A, is a small insulated off-grid cabin. The project is shown on two YouTube channels: Life at Fernwood, which follows the property and the wider project, and Smarter Circuits, which carries sponsor-related coverage by default.",
+      "Fernwood is a privately owned 10.3-acre wooded property in northern Michigan, and the name of the long-term project to develop it into a practical, low-impact, off-grid place. The first build, Fernwood Cabin A, is a small insulated off-grid cabin. The project is shown on two YouTube channels: Life at Fernwood, which follows the property and the wider project, and Smarter Circuits, which carries sponsor-related coverage by default.",
     ],
   },
   {
@@ -33,7 +33,7 @@ export const faq: FaqItem[] = [
   {
     q: "Is the cabin off-grid?",
     a: [
-      "Primarily, yes. There is no conventional 100 A utility service planned. Power will come from solar, batteries and two independent inverter systems. Well, septic and water storage are separate future phases, outside the cabin budget.",
+      "Yes, fully. There will be no outside utility connections of any kind. Power will come from solar, batteries and two independent inverter systems. Water comes from two 65-gallon tanks and a pump on the service platform. A well (estimated 60–80 ft deep, and significantly more expensive) and septic are separate future phases, outside the cabin budget.",
     ],
   },
   {

@@ -35,7 +35,7 @@ export const materialGroups: MaterialGroup[] = [
   { id: "siding", label: "Exterior siding", rangeNote: "Planning range $900–$1,300 depending on product" },
   { id: "interior", label: "Interior finish" },
   { id: "fixtures", label: "Kitchen & bath fixtures" },
-  { id: "plumbing", label: "Plumbing", rangeNote: "Rough plumbing planning range $1,000–$1,500 beyond fixtures; water heater and exhaust fan are separate lines" },
+  { id: "plumbing", label: "Plumbing", rangeNote: "Rough plumbing planning range $1,000–$1,500 beyond fixtures; water tanks, pump, water heater and exhaust fan are separate lines" },
   { id: "electrical", label: "Electrical", rangeNote: "Distribution and devices $650–$850 (smoke/CO alarms listed separately); excludes inverters, batteries and charge controllers" },
   { id: "heating", label: "Heating" },
   { id: "hardware", label: "Hardware & consumables" },
@@ -121,6 +121,8 @@ export const materials: MaterialItem[] = [
   { id: "dwv-2", group: "plumbing", category: "DWV plumbing", item: "2-in drain / vent", spec: "", quantity: 1, unit: "allowance", unitCost: 120, status: "estimated", sponsorCategory: "pex", note: "Allowance" },
   { id: "dwv-15", group: "plumbing", category: "DWV plumbing", item: "1½-in sink drainage", spec: "", quantity: 1, unit: "allowance", unitCost: 90, status: "estimated", sponsorCategory: "pex", note: "Allowance" },
   { id: "traps", group: "plumbing", category: "DWV plumbing", item: "Traps, toilet flange, fixture connections", spec: "", quantity: 1, unit: "allowance", unitCost: 110, status: "estimated", sponsorCategory: "pex", note: "Allowance" },
+  { id: "water-tanks", group: "plumbing", category: "Water storage", item: "65-gallon water tank", spec: "On the under-floor service platform", quantity: 2, unit: "ea", unitCost: 160, status: "estimated", sponsorCategory: "pumps" },
+  { id: "water-pump", group: "plumbing", category: "Water storage", item: "Water pump", spec: "Pressurizes supply from the tanks; type not selected", quantity: 1, unit: "ea", unitCost: 150, status: "estimated", sponsorCategory: "pumps", note: "Allowance" },
   { id: "water-heater", group: "plumbing", category: "Water heater", item: "Small cabin water heater", spec: "Fuel and type not selected", quantity: 1, unit: "ea", unitCost: 500, status: "estimated", sponsorCategory: "water-heating", note: "Allowance" },
   { id: "exhaust-fan", group: "plumbing", category: "Ventilation", item: "Bathroom exhaust fan", spec: "Ducted to exterior", quantity: 1, unit: "ea", unitCost: 140, status: "estimated", sponsorCategory: "ventilation" },
 
@@ -160,10 +162,9 @@ export const ownerSupplied: OwnerSuppliedItem[] = [
 export const budgetExclusions = [
   "Batteries, charge controllers and inverters (open sponsorship needs)",
   "Septic system",
-  "Well or complete water system",
+  "Well (estimated 60–80 ft deep)",
   "Driveway and site development",
   "Major excavation and trenching",
-  "Utility grid connection",
   "Labor, where work is DIY",
   "Permit fees",
   "Major appliances, unless listed",
@@ -173,6 +174,6 @@ export const budgetExclusions = [
 
 /**
  * Rounded public-facing figure. Keep it consistent with the computed working
- * budget shown beside it (currently base + 15% ≈ $21.5k).
+ * budget shown beside it (currently base + 15% ≈ $22.1k).
  */
-export const PUBLIC_BUDGET_SUMMARY = "$20,000–$22,000";
+export const PUBLIC_BUDGET_SUMMARY = "$20,000–$23,000";

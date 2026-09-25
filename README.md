@@ -63,7 +63,7 @@ Requires Node 20.9+. TypeScript is pinned to 5.x on purpose: Next's build-time t
 Also **verify before publishing** (these are not auto-detected):
 
 - **Phase statuses** in `src/data/phases.ts`. Currently only "Property acquired" is `complete` and "Site assessment" is `in-progress`; everything else is `planned`, with the wood stove as `stretch`. Adjust to reality.
-- **Material line-item breakdown** in `src/data/materials.ts`. Framing, posts, concrete, sheet goods, doors and windows use the brief's quantities and approximate prices. The remaining groups (roofing, insulation, envelope, siding, interior, fixtures, plumbing, electrical, heating, hardware) split the brief's category figures and ranges into line items marked **Allowance**. The lines reconcile exactly to the stated **$18,735.60** base (→ $2,810.34 contingency → $21,545.94 working budget). Swap in the detailed estimate's actual lines when convenient; totals recompute automatically.
+- **Material line-item breakdown** in `src/data/materials.ts`. Framing, posts, concrete, sheet goods, doors and windows use the brief's quantities and approximate prices. The remaining groups (roofing, insulation, envelope, siding, interior, fixtures, plumbing, electrical, heating, hardware) split the brief's category figures and ranges into line items marked **Allowance**. The lines reconcile exactly to the stated **$18,735.60** base, plus two 65-gallon water tanks and a water pump added later (now **$19,205.60** base → $2,880.84 contingency → $22,086.44 working budget). Swap in the detailed estimate's actual lines when convenient; totals recompute automatically.
 
 ---
 
