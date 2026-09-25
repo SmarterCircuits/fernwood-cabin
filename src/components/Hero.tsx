@@ -34,8 +34,8 @@ export function Hero() {
             </p>
             <p className="hero-copy">
               A real, privately owned build shown on two YouTube channels, <strong>Smarter Circuits</strong> and <strong>Life at Fernwood</strong>,
-              from the first footing to years of daily use. Every product that goes into this cabin is chosen because the build needs it, installed
-              on camera, and revisited after it has lived through northern Michigan winters.
+              from the first footing to years of daily use. Every product that goes into this cabin is chosen based on the needs of the build. Each product will be installed
+              on camera and revisited after it has lived through northern Michigan winters.
             </p>
             <ul className="hero-themes" aria-label="What the project combines">
               {themes.map((t) => (

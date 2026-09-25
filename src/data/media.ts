@@ -17,7 +17,7 @@ export const media: Record<string, MediaSlot> = {
     id: "property",
     label: "Fernwood property",
     brief: "Wide shot of the property from the two-track, showing the mixed hardwood forest.",
-    src: null,
+    src: "/media/20260828_080642.jpg",
     alt: "The Fernwood property: mixed northern Michigan hardwood forest",
     aspect: "4 / 3",
   },
