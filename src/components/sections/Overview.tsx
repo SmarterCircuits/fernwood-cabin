@@ -47,7 +47,7 @@ export function Overview() {
           <ul className="legend-list">
             <li>
               <span><SponsorChip status="owner-supplied" label="Already owned" /></span>
-              Equipment the owner already has: batteries, charge controllers, two inverters, a wood stove. Not a sponsorship need.
+              Equipment the owner already has: a wood stove. Not a sponsorship need.
             </li>
             <li>
               <span><PhaseChip status="planned" /></span>

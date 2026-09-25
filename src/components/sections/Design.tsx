@@ -42,15 +42,14 @@ export function Design() {
         <div className="diagram">
           <div className="diagram-title">
             <h3>Side elevation</h3>
-            <span className="stamp">Conceptual</span>
           </div>
           <p className="scroll-hint" aria-hidden="true">Swipe sideways to see the full drawing →</p>
           <div className="diagram-scroll" tabIndex={0} role="region" aria-label="Side elevation drawing (scrollable)">
             <CabinElevation />
           </div>
           <p className="diagram-note">
-            Dimensions are approximate. The floor framing sits {cabin.postHeight} ft above grade on eight PT 4x6 posts; post locations are
-            dependent, with layout, footings, and connections upon code compliance. The service platform between the posts sits at{" "}
+            Dimensions are approximate. The floor framing sits {cabin.postHeight} ft above grade on eight PT 4x6 posts; post locations,
+            layout, footings and connections depend on code compliance. The service platform between the posts sits at{" "}
             {cabin.servicePlatform.heightLabel} so the black tank can roll straight out, and the diesel heater and electrical equipment stay
             reachable without entering the cabin.
           </p>
@@ -60,14 +59,12 @@ export function Design() {
           <div className="diagram">
             <div className="diagram-title">
               <h3>Footprint</h3>
-              <span className="stamp">Conceptual</span>
             </div>
             <Footprint />
           </div>
           <div className="diagram">
             <div className="diagram-title">
               <h3>Roof plan</h3>
-              <span className="stamp">Conceptual</span>
             </div>
             <RoofPlan />
           </div>
@@ -130,7 +127,7 @@ export function Design() {
               <div className="total-card"><dt>Floor (target {envelope.floorTarget})</dt><dd>{envelope.floorArea} sq ft</dd></div>
             </dl>
             <div className="card card--tint" style={{ marginTop: 16 }}>
-              <h3>The cathedral roof is where building science matters most</h3>
+              <h3>Roof insulation</h3>
               <p style={{ fontSize: "0.93rem" }}>
                 The ceiling follows the roof slope (≈ {envelope.ceilingArea} sq ft). The 2x12 rafters leave plenty of cavity depth, but the assembly
                 is not decided. Options under consideration:

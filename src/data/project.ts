@@ -101,7 +101,7 @@ export const envelope = {
   grossWallArea: 560, // sq ft (8 ft low wall, 12 ft high wall)
   openingArea: 76,
   netWallArea: 484,
-  ceilingArea: 198, // sloped cathedral ceiling
+  ceilingArea: 198, // ceiling follows the roof slope
   floorArea: 192,
   wallLayers: [
     { layer: "Interior drywall", detail: "½-in; moisture-resistant in bathroom" },

@@ -11,15 +11,15 @@ export function Systems() {
       <div className="container">
         <SectionHeader index="04" eyebrow="Off-Grid Systems" title="Sized for what the cabin actually needs" id="systems-title">
           <p>
-            No 100 A utility service and no suburban-style panel. Fernwood Cabin A runs on two small, independent inverter systems. Power is managed on
-            purpose, and the aim is off-grid technology sized to real loads rather than oversized hardware.
+            Fernwood Cabin A runs on two small, independent inverter systems. This allows for a redundant backup as well as normally
+            isolated systems for lighting and critical systems like heat and refrigeration. The cabin will be automated to maintain a
+            minimum temperature while unattended as well as alerting me remotely if anything goes wrong.
           </p>
         </SectionHeader>
 
         <div className="diagram">
           <div className="diagram-title">
             <h3>Power architecture</h3>
-            <span className="stamp">Conceptual · not a wiring diagram</span>
           </div>
           <div className="flow" role="group" aria-label="Power flow from solar to cabin loads">
             <div className="flow-node flow-node--future">
@@ -27,13 +27,13 @@ export function Systems() {
               <h4>Solar array</h4>
               <p>Installed on the metal roof in a later phase.</p>
             </div>
-            <div className="flow-node flow-node--owned">
-              <span className="kicker">Owner supplied</span>
+            <div className="flow-node">
+              <span className="kicker">Seeking sponsor</span>
               <h4>Charge controllers</h4>
-              <p>Already planned; not a sponsorship need.</p>
+              <p>Sized to the future roof-mounted array.</p>
             </div>
-            <div className="flow-node flow-node--owned">
-              <span className="kicker">Owner supplied</span>
+            <div className="flow-node">
+              <span className="kicker">Seeking sponsor</span>
               <h4>Battery storage</h4>
               <p>DC-side configuration to be finalized with the equipment.</p>
             </div>
@@ -46,8 +46,8 @@ export function Systems() {
                       <strong>{sys.name}</strong>
                       <span className="kicker">{sys.role}</span>
                     </div>
-                    <div className="flow-node flow-node--owned">
-                      <span className="kicker">Owner supplied</span>
+                    <div className="flow-node">
+                      <span className="kicker">Seeking sponsor</span>
                       <h4>{(power.inverterWatts / 1000).toFixed(0)},000 W inverter</h4>
                       <p>≈ {amps} A at {power.volts} V</p>
                     </div>

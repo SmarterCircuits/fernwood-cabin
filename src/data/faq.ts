@@ -46,7 +46,8 @@ export const faq: FaqItem[] = [
   {
     q: "What products are already supplied?",
     a: [
-      "The owner is supplying the batteries, solar charge controllers and both 3,000 W inverters, and already owns a new wood stove. None of these are sponsorship needs, and none are counted in the materials budget.",
+      "Only a new wood stove, which the owner already owns and could install as a later stretch phase. It is not a sponsorship need and is not counted in the materials budget.",
+      "The batteries, solar charge controllers and both 3,000 W inverters have not been sourced yet. They are open sponsorship needs, listed separately from the materials budget.",
     ],
   },
   {

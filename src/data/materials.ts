@@ -36,7 +36,7 @@ export const materialGroups: MaterialGroup[] = [
   { id: "interior", label: "Interior finish" },
   { id: "fixtures", label: "Kitchen & bath fixtures" },
   { id: "plumbing", label: "Plumbing", rangeNote: "Rough plumbing planning range $1,000–$1,500 beyond fixtures; water heater and exhaust fan are separate lines" },
-  { id: "electrical", label: "Electrical", rangeNote: "Distribution and devices $650–$850 (smoke/CO alarms listed separately); excludes owner-supplied inverters, batteries and charge controllers" },
+  { id: "electrical", label: "Electrical", rangeNote: "Distribution and devices $650–$850 (smoke/CO alarms listed separately); excludes inverters, batteries and charge controllers" },
   { id: "heating", label: "Heating" },
   { id: "hardware", label: "Hardware & consumables" },
 ];
@@ -80,7 +80,7 @@ export const materials: MaterialItem[] = [
   { id: "wall-batts", group: "insulation", category: "Cavity insulation", item: "R-13 / R-15 wall insulation", spec: "2x4 cavities, ≈ 484 sq ft net wall", quantity: 4, unit: "bag", unitCost: 65, status: "estimated", sponsorCategory: "insulation" },
   { id: "rigid-foam", group: "insulation", category: "Exterior rigid insulation", item: "1-in rigid board, ≈ R-5", spec: "Continuous exterior insulation", quantity: 20, unit: "sheet", unitCost: 32, status: "estimated", sponsorCategory: "rigid-foam" },
   { id: "floor-insulation", group: "insulation", category: "Floor insulation", item: "Floor insulation, R-30+", spec: "192 sq ft elevated floor", quantity: 192, unit: "sq ft", unitCost: 1.98, status: "estimated", sponsorCategory: "insulation", note: "Allowance" },
-  { id: "roof-insulation", group: "insulation", category: "Roof insulation", item: "Cathedral roof insulation", spec: "≈ 198 sq ft; assembly not yet selected", quantity: 198, unit: "sq ft", unitCost: 2.63, status: "estimated", sponsorCategory: "insulation", note: "Allowance — assembly TBD" },
+  { id: "roof-insulation", group: "insulation", category: "Roof insulation", item: "Roof insulation", spec: "≈ 198 sq ft; assembly not yet selected", quantity: 198, unit: "sq ft", unitCost: 2.63, status: "estimated", sponsorCategory: "insulation", note: "Allowance — assembly TBD" },
 
   /* ---------------- Envelope ---------------- */
   { id: "wrb", group: "envelope", category: "Weather barrier", item: "Weather-resistive barrier", spec: "Over exterior insulation", quantity: 1, unit: "roll", unitCost: 175, status: "estimated", sponsorCategory: "weather-barriers" },
@@ -153,15 +153,12 @@ export const materials: MaterialItem[] = [
  * budget total and NOT a sponsorship need.
  */
 export const ownerSupplied: OwnerSuppliedItem[] = [
-  { item: "Batteries", note: "Energy storage for both inverter systems" },
-  { item: "Solar charge controllers", note: "For the future roof-mounted array" },
-  { item: "Two 3,000 W inverters", note: "Independent systems A and B" },
   { item: "Wood stove (new)", note: "Possible stretch phase; install materials not in budget" },
 ];
 
 /** Items explicitly outside the cabin materials budget. */
 export const budgetExclusions = [
-  "Batteries, charge controllers and inverters (owner supplied)",
+  "Batteries, charge controllers and inverters (open sponsorship needs)",
   "Septic system",
   "Well or complete water system",
   "Driveway and site development",

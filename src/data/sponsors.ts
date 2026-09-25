@@ -41,7 +41,7 @@ export const sponsorCategories: SponsorCategory[] = [
   { id: "solar-panels", name: "Solar panels", group: "roof-solar", status: "seeking", fit: "Roof-mounted array sized to the cabin’s modest, managed loads.", phases: ["solar"] },
 
   // Building envelope
-  { id: "insulation", name: "Insulation", group: "envelope", status: "seeking", fit: "Wall cavities (≈ 484 sq ft net), R-30+ floor (192 sq ft), cathedral roof (≈ 198 sq ft).", phases: ["insulation"] },
+  { id: "insulation", name: "Insulation", group: "envelope", status: "seeking", fit: "Wall cavities (≈ 484 sq ft net), R-30+ floor (192 sq ft), sloped roof (≈ 198 sq ft).", phases: ["insulation"] },
   { id: "rigid-foam", name: "Rigid foam / exterior insulation", group: "envelope", status: "seeking", fit: "≈ 20 sheets of 1-in, ≈ R-5 continuous exterior insulation.", phases: ["exterior"] },
   { id: "weather-barriers", name: "Weather barriers", group: "envelope", status: "seeking", fit: "WRB over the exterior insulation, integrated with window and door flashing.", phases: ["weather-tight"] },
   { id: "flashing", name: "Flashing systems", group: "envelope", status: "seeking", fit: "Window/door flashing, drip caps, Z-flashing and roof-to-wall details.", phases: ["weather-tight", "openings"] },
@@ -75,7 +75,7 @@ export const sponsorCategories: SponsorCategory[] = [
   { id: "energy-monitoring", name: "Energy monitoring", group: "electrical-energy", status: "seeking", fit: "Per-system production, storage and load monitoring.", phases: ["commissioning", "long-term"] },
   { id: "smart-home", name: "Smart-home controls", group: "electrical-energy", status: "seeking", fit: "Local control and automation for heat, lights and loads.", phases: ["commissioning", "long-term"] },
   { id: "sensors", name: "Sensors", group: "electrical-energy", status: "seeking", fit: "Temperature, humidity and leak sensing so the cabin can be monitored remotely.", phases: ["commissioning", "long-term"] },
-  { id: "off-grid", name: "Solar / off-grid equipment", group: "electrical-energy", status: "owner-supplied", statusNote: "Batteries, charge controllers and two 3,000 W inverters are owner supplied. Balance-of-system parts may still be open.", fit: "Wiring, protection and disconnect hardware around the owner-supplied core.", phases: ["solar", "commissioning"] },
+  { id: "off-grid", name: "Solar / off-grid equipment", group: "electrical-energy", status: "seeking", fit: "Batteries, solar charge controllers and two 3,000 W inverters for independent systems A and B, plus wiring, protection and disconnect hardware. Kept outside the materials budget.", phases: ["solar", "commissioning"] },
   { id: "appliances", name: "Appliances", group: "electrical-energy", status: "seeking", fit: "Efficient, low-draw appliances matched to an inverter budget.", phases: ["interior", "long-term"] },
   { id: "refrigerator", name: "Compact refrigerators", group: "electrical-energy", status: "seeking", fit: "Runs on Inverter System A; efficiency is measured, not assumed.", phases: ["commissioning", "long-term"] },
 
@@ -128,7 +128,7 @@ export const featuredOpportunities: FeaturedOpportunity[] = [
     id: "electrical",
     title: "Electrical",
     needed: "Small dual-inverter branch distribution",
-    detail: "Two independent load centers fed by owner-supplied 3,000 W inverters. Panels, breakers, devices, lighting and protection.",
+    detail: "Two independent load centers fed by two 3,000 W inverters. Panels, breakers, devices, lighting and protection.",
     status: "seeking",
     statusLabel: "Seeking product partners",
     categories: ["electrical-panels", "electrical-devices", "lighting"],
